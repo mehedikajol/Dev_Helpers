@@ -1,0 +1,1 @@
+https://marketplace.visualstudio.com/_apis/public/gallery/publishers/jotting89/vsextensions/GitLineCodeLens/1.0.1.3/vspackage
