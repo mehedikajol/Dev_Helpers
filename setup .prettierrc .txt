@@ -1,0 +1,15 @@
+// Prettier override settings
+// ignore in local .gitignore
+// save as .prettierrc
+
+{
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "auto"
+}
