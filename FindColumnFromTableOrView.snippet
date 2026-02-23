@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>FindColumnFromTableOrView</Title>
+      <Shortcut>FindColumnFromTableOrView</Shortcut>
+      <Description>Find which table or view contains a given column</Description>
+      <Author>YourName</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>ColumnName</ID>
+          <ToolTip>Enter the column name</ToolTip>
+          <Default>ColumnName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="SQL"><![CDATA[
+SELECT  
+    s.name AS SchemaName,
+    CASE 
+        WHEN t.name IS NOT NULL THEN t.name 
+        ELSE v.name 
+    END AS ObjectName,
+    CASE 
+        WHEN t.name IS NOT NULL THEN 'Table' 
+        ELSE 'View' 
+    END AS ObjectType,
+    c.name AS ColumnName
+FROM sys.columns c
+LEFT JOIN sys.tables t 
+    ON c.object_id = t.object_id
+LEFT JOIN sys.views v
+    ON c.object_id = v.object_id
+LEFT JOIN sys.schemas s
+    ON COALESCE(t.schema_id, v.schema_id) = s.schema_id
+WHERE c.name LIKE '%$ColumnName$%'
+    AND (t.object_id IS NOT NULL OR v.object_id IS NOT NULL);
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

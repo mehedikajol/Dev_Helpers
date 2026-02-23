@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>AllTablesRowAndColumnCount</Title>
+      <Shortcut>AllTablesRowAndColumnCount</Shortcut>
+      <Description>Get column count and row count for all tables in the database</Description>
+      <Author>YourName</Author>
+    </Header>
+    <Snippet>
+      <Code Language="SQL"><![CDATA[
+SELECT 
+    SCHEMA_NAME(t.schema_id) AS SchemaName,
+    t.name AS TableName,
+    COUNT(c.column_id) AS Columns,
+    SUM(p.rows) AS Rows
+FROM sys.tables t
+INNER JOIN sys.columns c ON t.object_id = c.object_id
+INNER JOIN sys.partitions p ON t.object_id = p.object_id AND p.index_id IN (0,1)
+GROUP BY t.schema_id, t.name
+ORDER BY Rows DESC, TableName;
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

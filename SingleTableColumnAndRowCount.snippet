@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>SingleTableColumnAndRowCount</Title>
+      <Shortcut>SingleTableColumnAndRowCount</Shortcut>
+      <Description>Get column count and row count for a specific table</Description>
+      <Author>YourName</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>TableName</ID>
+          <ToolTip>Enter the table name</ToolTip>
+          <Default>YourTableName</Default>
+        </Literal>
+        <Literal>
+          <ID>SchemaName</ID>
+          <ToolTip>Enter the schema name</ToolTip>
+          <Default>dbo</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="SQL"><![CDATA[
+DECLARE @TableName NVARCHAR(128) = '$TableName$';
+DECLARE @SchemaName NVARCHAR(128) = '$SchemaName$';
+
+SELECT 
+    t.name AS TableName,
+    COUNT(c.column_id) AS Columns,
+	SUM(p.rows) AS Rows
+FROM sys.tables t
+INNER JOIN sys.columns c ON t.object_id = c.object_id
+INNER JOIN sys.partitions p ON t.object_id = p.object_id AND p.index_id IN (0,1)
+WHERE t.name = @TableName AND SCHEMA_NAME(t.schema_id) = @SchemaName
+GROUP BY t.name;
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
