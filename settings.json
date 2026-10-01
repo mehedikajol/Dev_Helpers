@@ -1,0 +1,119 @@
+{
+    "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.wordWrap": "on",
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": true
+    },
+    //"editor.formatOnSave": true,
+    "editor.guides.indentation": true,
+    "editor.tabSize": 4,
+    "prettier.tabWidth": 4,
+    "prettier.printWidth": 120,
+    "editor.codeActionsOnSave": {
+        //"source.organizeImports": "explicit",
+        "source.fixAll.eslint": "explicit"
+    },
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ],
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.unicodeHighlight.allowedLocales": {
+        "es": true,
+        "cs": true
+    },
+    "files.eol": "\n",
+    "git.openRepositoryInParentFolders": "always",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "js/ts.updateImportsOnFileMove.enabled": "always",
+    "files.exclude": {
+        "**/.angular": true,
+        "**/.bundle": true,
+        "**/.vs": true,
+        "**/bin": true,
+        "**/node_modules": true,
+        "**/obj": true,
+        "**/.vscode": false
+    },
+    "terminal.integrated.cursorStyle": "line",
+    "editor.cursorBlinking": "expand",
+    "angular.log": "terse",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "omnisharp.enableAsyncCompletion": true,
+    "explorer.compactFolders": false,
+    "editor.autoClosingBrackets": "always",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.fontSize": 12,
+    "workbench.settings.applyToAllProfiles": [],
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.renderWhitespace": "all",
+    "[dockercompose]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.linkedEditing": true,
+    "workbench.colorTheme": "Dracula Theme",
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    "editor.dropIntoEditor.preferences": [],
+    "window.zoomLevel": 1,
+    "dotnet.formatting.organizeImportsOnFormat": true,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "editor.fontVariations": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "git.autofetch": true,
+    "chat.viewSessions.orientation": "stacked",
+    "mssql.connectionGroups": [
+        {
+            "name": "ROOT",
+            "id": "ROOT"
+        }
+    ],
+    "workbench.iconTheme": "material-icon-theme",
+    "claudeCode.preferredLocation": "panel",
+    "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "branches": true,
+        "remotes": true,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "fileHistory": true,
+        "repositories": true,
+        "searchAndCompare": false,
+        "launchpad": false
+    },
+    "workbench.editor.enablePreview": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "kilo-code.new.agentManagerOpen",
+        "kilo-code.new.agentManager.showTerminal",
+        "kilo-code.new.agentManager.previousTerminal",
+        "kilo-code.new.agentManager.nextTerminal"
+    ],
+    "kilo-code.new.agentWorkStyle": "skipped",
+}
